@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="./css/fontawesome.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+
+    <title>calculator</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-6 calculator-body">
+                <div class="row justify-content-end mb-3">
+                    <div class="col-3  solar-energy d-flex p-0">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col margin-screen p-0">
+                        <div id="screen">
+                            <h2 class="my-0">
+                                <span class="digit"><span class="digit-placeholder">8</span><span class="digit-number"></span> </span>
+                                <span class="digit"><span class="digit-placeholder">8</span><span class="digit-number"></span></span>
+                                <span class="digit"><span class="digit-placeholder">8</span><span class="digit-number"></span></span>
+                                <span class="digit"><span class="digit-placeholder">8</span><span class="digit-number"></span></span>
+                                <span class="digit"><span class="digit-placeholder">8</span><span class="digit-number"></span></span>
+                                <span class="digit"><span class="digit-placeholder">8</span><span class="digit-number"></span></span>
+                                <span class="digit"><span class="digit-placeholder">8</span><span class="digit-number"></span></span>
+                                <span class="digit"><span class="digit-placeholder">8</span><span class="digit-number"></span></span>
+                                <span class="digit"><span class="digit-placeholder">8</span><span class="digit-number"></span></span>
+                                <span class="digit"><span class="digit-placeholder">8</span><span class="digit-number"></span></span>
+                                <span class="digit"><span class="digit-placeholder">8</span><span class="digit-number"></span></span>
+                                <span class="digit"><span class="digit-placeholder">8</span><span class="digit-number"></span></span>
+                                <span class="digit"><span class="digit-placeholder">8</span><span class="digit-number"></span></span>
+                                <span class="digit"><span class="digit-placeholder">8</span><span class="digit-number">0</span></span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-9 p-0">
+                        <div class="secondary-operator d-flex mb-4">
+                            <a onmousedown="calculatorObject.handleClear(event)" href="#" class="btn btn-simple">AC</a>
+                            <a onmousedown="calculatorObject.handleSquareRoot('squareroot')" id="squareroot" href="#" class="btn btn-simple"><i class="fa fa-square-root-alt"></i></a>
+                            <a onmousedown="calculatorObject.handleOperator('remaining')" id="remaining" href="#" class="btn btn-operator"><i class="fa fa-percentage"></i></a>
+                        </div>
+                        <div class="numbers">
+                            <a onmousedown="calculatorObject.pressNumber(7 , event)" href="#" class="btn btn-simple">7</a>
+                            <a onmousedown="calculatorObject.pressNumber(8 , event)" href="#" class="btn btn-simple">8</a>
+                            <a onmousedown="calculatorObject.pressNumber(9 , event)" href="#" class="btn btn-simple">9</a>
+                            <a onmousedown="calculatorObject.pressNumber(4 , event)" href="#" class="btn btn-simple">4</a>
+                            <a onmousedown="calculatorObject.pressNumber(5 , event)" href="#" class="btn btn-simple">5</a>
+                            <a onmousedown="calculatorObject.pressNumber(6 , event)" href="#" class="btn btn-simple">6</a>
+                            <a onmousedown="calculatorObject.pressNumber(1 , event)" href="#" class="btn btn-simple">1</a>
+                            <a onmousedown="calculatorObject.pressNumber(2 , event)" href="#" class="btn btn-simple">2</a>
+                            <a onmousedown="calculatorObject.pressNumber(3 , event)" href="#" class="btn btn-simple">3</a>
+                            <a onmousedown="calculatorObject.pressNumber(0 , event)" href="#" class="btn btn-simple zero">0</a>
+                            <a onmousedown="calculatorObject.pressDot(event)" href="#" class="btn btn-simple">.</a>
+                        </div>
+                    </div>
+                    <div class="col-3 pe-0">
+                        <div class=" primary-operator d-flex flex-column">
+                            <a onmousedown="calculatorObject.handleOperator('divide')" id="divide" href="#" class="btn btn-operator btn-primary-operator d-flex align-items-center justify-content-center"><i class="fas fa-divide"></i></a>
+                            <a onmousedown="calculatorObject.handleOperator('multiple')" id="multiple" href="#" class="btn btn-operator btn-primary-operator d-flex align-items-center justify-content-center"><i class="fas fa-times"></i></a>
+                            <a onmousedown="calculatorObject.handleOperator('minus')" id="minus" href="#" class="btn btn-operator btn-primary-operator d-flex align-items-center justify-content-center"><i class="fas fa-minus"></i></a>
+                            <a onmousedown="calculatorObject.handleOperator('plus')" id="plus" href="#" class="btn btn-operator btn-primary-operator d-flex align-items-center justify-content-center"><i class="fas fa-plus"></i></a>
+                            <a onmousedown="calculatorObject.handleResult('result')" id="result" href="#" class="btn btn-primary-operator d-flex align-items-center justify-content-center"><i class="fas fa-equals"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!--  scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p " crossorigin="anonymous "></script>
+    <script type="text/javascript" src="./build/main.js"></script>
+
+
+</body>
+
+</html>

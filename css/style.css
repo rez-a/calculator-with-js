@@ -1,0 +1,184 @@
+    @font-face {
+        font-family: 'Rubik';
+        src: url('../fonts/Rubik-Regular.eot');
+        /* IE9 Compat Modes */
+        src: url('../fonts/Rubik-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('../fonts/Rubik-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+        url('../fonts/Rubik-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+        url('../fonts/Rubik-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+        url('../fonts/Rubik-Regular.svg#svgFontName') format('svg');
+        /* Legacy iOS */
+    }
+    
+    @font-face {
+        font-family: 'Digital';
+        src: url('../fonts/DS-DIGIB.eot');
+        /* IE9 Compat Modes */
+        src: url('../fonts/DS-DIGIB.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('../fonts/DS-DIGIB.woff2') format('woff2'), /* Super Modern Browsers */
+        url('../fonts/DS-Digital-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+        url('../fonts/DS-Digital-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+        url('../fonts/DS-Digital-Bold.svg#svgFontName') format('svg');
+        /* Legacy iOS */
+    }
+    /* utility */
+    
+     :root {
+        --bg-primary: linear-gradient(to right, #EEF3FA, #DCE8F4);
+        --bg-secondary: linear-gradient(to right, #F8B40B, #F4B40A);
+        --font-primary: 'Rubik';
+        --digital-font: 'Digital'
+    }
+    
+    body {
+        background-image: var(--bg-primary);
+        font-family: var(--font-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    
+    .btn {
+        color: #394551;
+        font-weight: 900;
+        background-image: var(--bg-primary);
+        background-repeat: no-repeat;
+        flex: 1;
+        border-radius: 10px;
+        box-shadow: -5px -5px 10px 2px #f9fafc, 5px 5px 10px 2px #d4e1ea;
+        margin: 0.5rem;
+        transition: all 0.5s;
+    }
+    
+    .btn:focus {
+        box-shadow: -5px -5px 10px 2px #f9fafc, 5px 5px 10px 2px #d4e1ea;
+    }
+    
+    .btn.active {
+        box-shadow: inset 5px 5px 10px 2px #d4e1ea, inset -5px -5px 10px 2px #f9fafc;
+        transition: all 0.5s;
+    }
+    
+    .btn i {
+        display: inline-flex;
+    }
+    /* style */
+    
+    .calculator-body {
+        background-image: var(--bg-primary);
+        padding: 2rem;
+        width: 325px;
+        height: auto;
+        box-shadow: -5px -5px 10px 2px #f9fafc, 5px 5px 10px 2px #d4e1ea;
+        border-radius: 20px;
+    }
+    
+    .calculator-body .solar-energy {
+        height: 30px;
+        background-image: linear-gradient(to right, #B39F9E, #836563);
+        border-radius: 5px;
+        box-shadow: inset 0px 0px 3px 3px #8a838a, inset 0px 0px 0px 1px #836563;
+    }
+    
+    .calculator-body .solar-energy div {
+        border-left: 1px solid #B7A1A3;
+        width: 25%;
+    }
+    
+    .calculator-body .solar-energy div:first-child {
+        border-left: none;
+    }
+    
+    .calculator-body .margin-screen {
+        border: 10px solid #E3EEF4;
+        border-radius: 5px;
+        box-shadow: -5px -5px 10px 2px #f9fafc, 5px 5px 10px 2px #d4e1ea;
+    }
+    
+    .calculator-body #screen {
+        background-color: #B9C5B1;
+        width: 100%;
+        height: 40px;
+        border-radius: 5px;
+        box-shadow: inset 3px 3px 9px 3px #a3ada4;
+        position: relative;
+    }
+    
+    .calculator-body #screen h2 {
+        width: 95%;
+        overflow: hidden;
+        margin: 0 auto;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-top: 0.2rem;
+        letter-spacing: 3px;
+        font-family: var(--digital-font);
+        color: #6f7768;
+        text-align: right;
+    }
+    
+    .calculator-body #screen h2 .digit {
+        position: relative;
+    }
+    
+    .calculator-body #screen h2 .digit-placeholder {
+        opacity: 0.2;
+    }
+    
+    .calculator-body #screen h2 .digit-number {
+        position: absolute;
+        opacity: 1;
+        right: 0;
+        top: 0;
+    }
+    
+    .secondary-operator,
+    .numbers {
+        background-image: var(--bg-primary);
+        box-shadow: -5px -5px 10px 2px #f9fafc, 5px 5px 10px 2px #d4e1ea;
+        border-radius: 10px;
+        padding: 0.25rem;
+    }
+    
+    .numbers {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+    
+    .numbers .zero {
+        grid-column: 1/3;
+    }
+    
+    .primary-operator .btn {
+        background-image: none;
+        background-color: #F4B60B;
+        color: #fff;
+        border-radius: 10px;
+        box-shadow: -5px -5px 10px 2px #FEC63F, 5px 5px 10px 2px #E5AC1D;
+    }
+    
+    .btn-primary-operator.active {
+        box-shadow: inset 5px 5px 10px 2px #E5AC1D, inset -5px -5px 10px 2px #FEC63F;
+    }
+    
+    .primary-operator {
+        background-color: #F4B60B;
+        border-radius: 10px;
+        box-shadow: -5px -5px 10px 2px #f9fafc, 5px 5px 10px 2px #d4e1ea;
+        height: 100%;
+    }
+    
+    @media screen and (max-width: 568px) {
+        .calculator-body {
+            width: 300px;
+        }
+    }
+    
+    @media screen and (min-width: 769px) {
+        .calculator-body {
+            width: 350px;
+        }
+    }
